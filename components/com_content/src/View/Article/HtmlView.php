@@ -25,6 +25,8 @@ use Joomla\CMS\Uri\Uri;
 use Joomla\Component\Content\Site\Helper\AssociationHelper;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 
+use Joomla\CMS\Toolbar\ToolbarHelper;
+
 /**
  * HTML Article View class for the Content component
  *
@@ -256,6 +258,8 @@ class HtmlView extends BaseHtmlView
 		$this->pageclass_sfx = htmlspecialchars($this->item->params->get('pageclass_sfx'));
 
 		$this->_prepareDocument();
+		
+		ToolbarHelper::title(Text::_('Article edit'), 'stack article');
 
 		parent::display($tpl);
 	}
